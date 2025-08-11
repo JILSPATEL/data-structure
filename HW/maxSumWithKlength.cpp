@@ -15,6 +15,7 @@ Maximum sum of 3 consecutive elements: 36
 Complexity:
 Time Complexity: O(n) – We traverse the array once using the sliding window approach.
 Space Complexity: O(n) for storing the array, O(1) auxiliary space.
+
 */
 
 #include <iostream>
