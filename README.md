@@ -1,3 +1,3 @@
 # Data Structure
-##Linked List
-##Stack and Queue
+## Linked List
+## Stack and Queue
