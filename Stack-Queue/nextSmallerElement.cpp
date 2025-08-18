@@ -3,7 +3,7 @@ using namespace std;
 
 vector<int> nextSmallerElements(vector<int>& nums) {
   int n = nums.size();
-  vector<int> nge(n, -1);
+  vector<int> nse(n, -1);
   stack<int> st;
 
   for (int i = n - 1; i >= 0; i--) {
@@ -12,13 +12,13 @@ vector<int> nextSmallerElements(vector<int>& nums) {
     }
 
     if (i < n && !st.empty()) {
-      nge[i] = st.top();
+      nse[i] = st.top();
     }
 
     st.push(nums[i]);
   }
 
-  return nge;
+  return nse;
 }
 
 int main() {
