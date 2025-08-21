@@ -41,6 +41,20 @@ int merge(vector<int> &arr, int low, int mid, int high)
         }
         cnt += (j - (mid + 1));
     }
+
+    /*
+    ==>if condition was arr[i]>arr[j]
+    for (int i = low; i <= mid; i++)
+    {
+        while (j <= high && arr[i] > arr[j])
+        {
+            j++;
+        }
+        cnt += (j - (mid + 1));
+    }
+    
+    */
+    
     vector<int> temp;
     int left = low, right = mid + 1;
 
