@@ -1,70 +1,120 @@
 #include <iostream>
 using namespace std;
 
-class Node {
+class ListNode
+{
 public:
     int data;
-    Node* next;
-    Node(int data1) {
-        data = data1;
+    ListNode *next;
+    ListNode(int x)
+    {
+        data = x;
         next = nullptr;
     }
 };
 
-// Function to remove a loop in a linked list
-void removeLoop(Node* head) {
-    Node* slow = head;
-    Node* fast = head;
+void loopLength(ListNode *slow, ListNode *fast)
+{
+    int cnt = 1;
+    fast = fast->next;
+    while (slow != fast)
+    {
+        cnt++;
+        fast = fast->next;
+    }
+    cout << "\nLoop Length: " << cnt << endl;
+}
 
-    while (fast != nullptr && fast->next != nullptr) {
+void removeLoop(ListNode *head)
+{
+    if(!head || !head->next) return;
+    ListNode *slow = head;
+    ListNode *fast = head;
+
+    while (fast && fast->next)
+    {
         slow = slow->next;
         fast = fast->next->next;
 
-        if (slow == fast) {  
+        if (slow == fast)
+        {
+            loopLength(slow, fast);
             slow = head;
-                while (slow->next != fast->next) {
+
+            if (slow == fast)
+            {
+                while (fast->next != slow)
+                {
+                    fast = fast->next;
+                }
+            }
+            else
+            {
+                while (slow->next != fast->next)
+                {
                     slow = slow->next;
                     fast = fast->next;
                 }
-            
-            fast->next = nullptr; // Break the loop
+            }
+            fast->next = nullptr;
             return;
         }
     }
 }
 
-void printList(Node* head) {
-    Node* temp = head;
-    while (temp) {
+void printList(ListNode *head)
+{
+    ListNode *temp = head;
+    while (temp)
+    {
         cout << temp->data << " ";
         temp = temp->next;
     }
     cout << endl;
 }
 
-int main() {
-    Node *head = nullptr;
-    Node *tail = nullptr;
-    cout << "Enter numbers to add to the linked list (-1 to stop):\n";
-    int val;
-    while (cin >> val && val != -1) {
-        Node *newNode = new Node(val);
-        if (head == nullptr) {
+int main()
+{
+    ListNode *head = nullptr;
+    ListNode *tail = nullptr;
+    int n, val, m;
+    cout << "How many elements do you want to insert: ";
+    cin >> n;
+    cout << "\nEnter " << n << " elements\n";
+
+    while (n > 0)
+    {
+        cin >> val;
+        ListNode *newNode = new ListNode(val);
+        if (!head)
+        {
             head = newNode;
             tail = newNode;
-        } else {
+        }
+        else
+        {
             tail->next = newNode;
             tail = newNode;
         }
+        n--;
     }
 
-    // ✅ Create a loop manually for testing: connect tail to 2nd node
-    if (head && head->next) {
-        tail->next = head->next;
+    cout << "\nOn which node (0-based index) should the last node point? Enter -1 for no loop.\n";
+    cin >> m;
+    if (m >= 0)
+    {
+        ListNode *temp = head;
+        while (m > 0 && temp)
+        {
+            temp = temp->next;
+            m--;
+        }
+        if (temp)
+        {
+            tail->next = temp;
+        }
     }
-
     removeLoop(head);
     printList(head);
-
     return 0;
 }
