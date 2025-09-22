@@ -1,3 +1,10 @@
+/*
+6 
+5 2 6 1 3 7
+1
+RFG = 2
+RLG = 5
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
