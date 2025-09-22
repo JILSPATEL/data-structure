@@ -1,3 +1,11 @@
+/*
+6
+5 2 6 1 3 7
+2
+For index 2 (value 6):
+Right First Smaller (nearest)  = 3
+Right Last Smaller (farthest) = 4
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
