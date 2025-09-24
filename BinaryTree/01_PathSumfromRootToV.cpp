@@ -1,6 +1,14 @@
 /*
-The sum of the values of the nodes on the unique path from the
+(a) The sum of the values of the nodes on the unique path from the
 root of T to v.
+
+Time Complexity:
+O(n) to build tree.
+O(n) to find path.
+
+Space Complexity:
+O(n) for tree + queue.
+O(h) for recursion stack (h = tree height)
 */
 #include <bits/stdc++.h>
 using namespace std;
@@ -21,13 +29,11 @@ Node* buildTree(vector<string>& arr){
     int i=1;
     while(!q.empty() && i<arr.size()){
         Node* curr = q.front(); q.pop();
-        // left child
         if(i<arr.size() && arr[i]!="N"){
             curr->left = new Node(stoi(arr[i]));
             q.push(curr->left);
         }
         i++;
-        // right child
         if(i<arr.size() && arr[i]!="N"){
             curr->right = new Node(stoi(arr[i]));
             q.push(curr->right);
@@ -37,14 +43,14 @@ Node* buildTree(vector<string>& arr){
     return root;
 }
 
-// Find path sum from root to node with value v
-bool findPath(Node* root,int v,vector<int>& path){
-    if(!root) return false;
-    path.push_back(root->val);
-    if(root->val==v) return true;
-    if(findPath(root->left,v,path) || findPath(root->right,v,path)) return true;
-    path.pop_back();
-    return false;
+// DFS to calculate path sum from root to node with value v
+int pathSumDFS(Node* root, int v, int currSum){
+    if(!root) return -1; // -1 means node not found in this path
+    currSum += root->val;
+    if(root->val == v) return currSum;
+    int left = pathSumDFS(root->left, v, currSum);
+    if(left != -1) return left;
+    return pathSumDFS(root->right, v, currSum);
 }
 
 int main(){
@@ -57,10 +63,7 @@ int main(){
     Node* root = buildTree(arr);
 
     int v; cin>>v;
-    vector<int> path;
-    if(findPath(root,v,path)){
-        int sum=0;
-        for(int x:path) sum+=x;
-        cout<<sum<<"\n";
-    } else cout<<"Node not found\n";
+    int sum = pathSumDFS(root, v, 0);
+    if(sum != -1) cout<<sum<<"\n";
+    else cout<<"Node not found\n";
 }
