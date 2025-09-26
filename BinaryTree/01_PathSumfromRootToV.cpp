@@ -1,5 +1,5 @@
 /*
-(a) The sum of the values of the nodes on the unique path from the
+The sum of the values of the nodes on the unique path from the
 root of T to v.
 
 Time Complexity:
