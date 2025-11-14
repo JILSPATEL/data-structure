@@ -1,74 +1,107 @@
 /**
- * Problem: Count the number of ordered sequences using 2-rupee and 3-rupee coins
- * that sum exactly to N. Order matters. Return result modulo 1e9+7.
+ * ---------------- PROBLEM 3: Count Ordered Ways (Hard) ----------------
+ *
+ * You must count the number of ordered sequences of:
+ *    • 2-rupee coin
+ *    • 3-rupee coin
+ *
+ * That sum to exactly N.
+ * Order matters.
  *
  * Recurrence:
- *     ways[n] = ways[n-2] + ways[n-3]   (mod 1e9+7)
+ *    dp[n] = dp[n-2] + dp[n-3]
  *
- * Sample Input:
- *     5
- *     1
- *     2
- *     3
- *     5
- *     10
+ * Constraints:
+ *   1 ≤ T ≤ 1000
+ *   1 ≤ N ≤ 1e18
+ * 
+ * ---------------------------- Sample Input ----------------------------
+ * 5
+ * 1
+ * 2
+ * 3
+ * 5
+ * 10
  *
- * Sample Output:
- *     0
- *     1
- *     1
- *     2
- *     7
+ * ---------------------------- Sample Output ---------------------------
+ * 0
+ * 1
+ * 1
+ * 2
+ * 7
  *
- * Explanation:
- *     N = 5 → sequences: [2+3], [3+2] → answer = 2
- *
- * Complexity:
- *     Time  : O(Nmax + T)
- *     Space : O(Nmax)   // DP array (fits in 40 MB)
+ * ----------------------------------------------------------------------
+ * ---------------------- Time & Space Complexity -----------------------
+ * Time Complexity  : O(log N) per test (matrix exponentiation)
+ * Space Complexity : O(1)
+ * ----------------------------------------------------------------------
  */
 
 #include <bits/stdc++.h>
 using namespace std;
 
-const int MOD = 1e9 + 7;
+const long long MOD = 1e9+7;
 
-int main() {
+struct Mat {
+    long long a[3][3];
+    Mat(){ memset(a, 0, sizeof(a)); }
+};
+
+Mat multiply(Mat A, Mat B){
+    Mat C;
+    for(int i=0;i<3;i++)
+        for(int j=0;j<3;j++)
+            for(int k=0;k<3;k++)
+                C.a[i][j] = (C.a[i][j] + A.a[i][k] * B.a[k][j]) % MOD;
+    return C;
+}
+
+Mat power(Mat M, long long n){
+    Mat R;
+    for(int i=0;i<3;i++) R.a[i][i] = 1;
+
+    while(n){
+        if(n & 1) R = multiply(R, M);
+        M = multiply(M, M);
+        n >>= 1;
+    }
+    return R;
+}
+
+int main(){
     ios::sync_with_stdio(false);
-    cin.tie(NULL);
+    cin.tie(nullptr);
 
     int T;
     cin >> T;
 
-    vector<int> queries(T);
-    int Nmax = 0;
+    while(T--){
+        long long N;
+        cin >> N;
 
-    for (int i = 0; i < T; i++) {
-        cin >> queries[i];
-        Nmax = max(Nmax, queries[i]);
+        if(N == 0) { cout << 1 << "\n"; continue; }
+        if(N == 1) { cout << 0 << "\n"; continue; }
+        if(N == 2) { cout << 1 << "\n"; continue; }
+        if(N == 3) { cout << 1 << "\n"; continue; }
+
+        Mat M;
+        M.a[0][1] = 1;
+        M.a[0][2] = 1;
+        M.a[1][0] = 1;
+        M.a[2][1] = 1;
+
+        long long P = N - 3;
+        Mat R = power(M, P);
+
+        long long dp3 = 1, dp2 = 1, dp1 = 0;
+
+        long long ans = (
+            R.a[0][0] * dp3 +
+            R.a[0][1] * dp2 +
+            R.a[0][2] * dp1
+        ) % MOD;
+
+        cout << ans << "\n";
     }
-
-    // Allocate DP up to maximum N
-    vector<int> dp(Nmax + 1, 0);
-
-    // Base cases
-    if (Nmax >= 0) dp[0] = 1;
-    if (Nmax >= 1) dp[1] = 0;
-    if (Nmax >= 2) dp[2] = 1;
-    if (Nmax >= 3) dp[3] = 1;
-
-    // DP computation
-    for (int i = 4; i <= Nmax; i++) {
-        long long res = dp[i - 2];
-        res += dp[i - 3];
-        if (res >= MOD) res -= MOD;
-        dp[i] = (int)res;
-    }
-
-    // Answer queries
-    for (int n : queries) {
-        cout << dp[n] << "\n";
-    }
-
     return 0;
 }
