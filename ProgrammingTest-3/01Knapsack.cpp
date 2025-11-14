@@ -71,16 +71,18 @@ int main(){
         vector<vector<int>> dp(W1+1, vector<int>(W2+1, 0));
 
         for(int i = 0; i < n; i++){
-            for(int m = W1; m >= w1[i]; m--){
-                for(int v = W2; v >= w2[i]; v--){
-                    dp[m][v] = max(dp[m][v],
-                                   dp[m - w1[i]][v - w2[i]] + val[i]);
+            vector<vector<int>> new_dp = dp;
+            for(int m = w1[i]; m <= W1; m++){
+                for(int v = w2[i]; v <= W2; v++){
+                    new_dp[m][v] = max(new_dp[m][v],
+                                       dp[m - w1[i]][v - w2[i]] + val[i]);
                 }
             }
+            dp = new_dp;
         }
 
         cout << dp[W1][W2] << "\n";
     }
+
     return 0;
 }
-
