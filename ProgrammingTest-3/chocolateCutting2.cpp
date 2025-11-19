@@ -29,7 +29,6 @@ Final Conditions for YES:
 
 Time Complexity:  O(N)
 Space Complexity: O(1)
-
 */
 
 #include <bits/stdc++.h>
