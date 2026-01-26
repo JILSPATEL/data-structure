@@ -41,11 +41,11 @@ int majorityElement(vector<int>& nums) {
 
     return (count > nums.size() / 2) ? candidate : -1;
 }
-
+```
 # Moore’s Voting Algorithm (n/3 Majority)
 
 This algorithm finds all elements that appear **more than ⌊n/3⌋ times** in an array.
-```
+
 ---
 
 ## Key Observation
@@ -82,8 +82,6 @@ Traverse the array:
 
 ---
 
-## C++ Implementation
-```cpp
 ## C++ Implementation
 ```cpp
 vector<int> majorityElement(vector<int>& nums) {
