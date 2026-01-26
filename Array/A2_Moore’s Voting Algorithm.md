@@ -84,6 +84,8 @@ Traverse the array:
 
 ## C++ Implementation
 ```cpp
+## C++ Implementation
+```cpp
 vector<int> majorityElement(vector<int>& nums) {
     int cand1 = 0, cand2 = 1;
     int count1 = 0, count2 = 0;
@@ -115,4 +117,8 @@ vector<int> majorityElement(vector<int>& nums) {
 
     vector<int> res;
     int n = nums.size();
-    if (count1 > n / 3) res.push_b_
+    if (count1 > n / 3) res.push_back(cand1);
+    if (count2 > n / 3) res.push_back(cand2);
+
+    return res;
+}
