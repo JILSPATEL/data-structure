@@ -1,97 +1,110 @@
 /**
- * Problem: Best Time to Buy and Sell Stock III
+ * Problem: Best Time to Buy and Sell Stock IV
  *
- * We are given an array prices where prices[i] represents the stock price on day i.
- * We are allowed to complete at most TWO transactions.
+ * We are given an array `prices` where prices[i] represents the price of a stock
+ * on day i. We are also given an integer `k`, representing the maximum number of
+ * transactions allowed. One transaction consists of:
  *
- * A transaction consists of:
- *      Buy once + Sell once
+ *      1 Buy + 1 Sell
  *
- * We cannot hold multiple stocks simultaneously, meaning we must sell before buying again.
+ * The goal is to compute the maximum profit that can be achieved using at most
+ * `k` transactions.
  *
  * ------------------------------------------------------------
- * Dynamic Programming Idea
+ * Key Idea (Dynamic Programming)
  *
  * At every day we have two choices:
  *
  * 1. Buy the stock (if we are allowed to buy)
- * 2. Sell the stock (if we currently hold stock)
+ * 2. Sell the stock (if we already bought)
  * 3. Skip the current day
  *
- * We track three states:
+ * To model this, we maintain three states:
+ *
+ * State Definition:
  *
  * dp[i][buy][cap]
  *
  * i   → current day index
  * buy → whether we can buy (1) or must sell (0)
- * cap → remaining transactions (max = 2)
+ * cap → remaining transactions
  *
  *
  * Meaning of states:
  *
- * buy = 1 → we can BUY a stock
- * buy = 0 → we must SELL the stock
+ * buy = 1 → we are allowed to BUY
+ * buy = 0 → we must SELL (because we already bought)
  *
- * cap → remaining number of transactions
+ * cap = remaining number of transactions left.
+ *
  *
  * ------------------------------------------------------------
  * Recurrence Relation
  *
- * Case 1: buy == 1
+ * Case 1: buy == 1 (we can buy stock)
  *
  * Option 1 → Buy stock
- *      -prices[i] + dp[i+1][0][cap]
+ *      profit = -prices[i] + dp[i+1][0][cap]
  *
- * Option 2 → Skip
- *      dp[i+1][1][cap]
+ * Option 2 → Skip the day
+ *      profit = dp[i+1][1][cap]
  *
- * dp[i][1][cap] =
- *      max(-prices[i] + dp[i+1][0][cap],
- *          dp[i+1][1][cap])
+ * dp[i][1][cap] = max(
+ *                     -prices[i] + dp[i+1][0][cap],
+ *                     dp[i+1][1][cap]
+ *                    )
  *
  *
- * Case 2: buy == 0
+ * Case 2: buy == 0 (we must sell stock)
  *
  * Option 1 → Sell stock
- *      prices[i] + dp[i+1][1][cap-1]
+ *      profit = prices[i] + dp[i+1][1][cap-1]
  *
- * Option 2 → Skip
- *      dp[i+1][0][cap]
+ * Option 2 → Skip the day
+ *      profit = dp[i+1][0][cap]
  *
- * dp[i][0][cap] =
- *      max(prices[i] + dp[i+1][1][cap-1],
- *          dp[i+1][0][cap])
+ * dp[i][0][cap] = max(
+ *                     prices[i] + dp[i+1][1][cap-1],
+ *                     dp[i+1][0][cap]
+ *                    )
  *
  *
  * ------------------------------------------------------------
  * Base Cases
  *
- * If we reach the end of the array:
+ * 1. If we reach the end of the array:
  *
- *      dp[n][*][*] = 0
+ *        dp[n][*][*] = 0
  *
- * If no transactions remain:
+ *    because no days remain to trade.
  *
- *      dp[*][*][0] = 0
+ * 2. If no transactions remain:
+ *
+ *        dp[*][*][0] = 0
  *
  *
  * ------------------------------------------------------------
  * Time Complexity
  *
- * O(n * 2 * 2) ≈ O(n)
+ * O(n * 2 * k)
+ *
+ * because we compute states for:
+ *    n days
+ *    2 buy states
+ *    k transaction capacities
  *
  *
  * Space Complexity
  *
- * Memoization : O(n * 2 * 3)
- * Tabulation  : O(n * 2 * 3)
+ * Memoization: O(n * 2 * k) + recursion stack
+ * Tabulation : O(n * 2 * k)
  *
  */
 
 
- //Mepization
+ // Memoization
 
-class Solution {
+ class Solution {
 public:
 
     int solve(int i,int buy,int cap,vector<int>& prices,
@@ -115,31 +128,32 @@ public:
         }
     }
 
-    int maxProfit(vector<int>& prices) {
+    int maxProfit(vector<int>& prices, int k) {
 
         int n=prices.size();
 
         vector<vector<vector<int>>> dp(n,
-            vector<vector<int>>(2,vector<int>(3,-1)));
+            vector<vector<int>>(2,vector<int>(k+1,-1)));
 
-        return solve(0,1,2,prices,dp);
+        return solve(0,1,k,prices,dp);
     }
 };
 
- //Tabulation
+
+//Tabulation
 
 class Solution {
 public:
-    int maxProfit(vector<int>& prices) {
+    int maxProfit(vector<int>& prices, int k) {
 
         int n = prices.size();
 
         vector<vector<vector<int>>> dp(n + 1,
-            vector<vector<int>>(2, vector<int>(3, 0)));
+            vector<vector<int>>(2, vector<int>(k + 1, 0)));
 
         for(int i=n-1;i>=0;i--){
             for(int buy=0;buy<=1;buy++){
-                for(int cap=1;cap<=2;cap++){
+                for(int cap=1;cap<=k;cap++){
 
                     if(buy){
                         dp[i][buy][cap]=max(
@@ -158,6 +172,6 @@ public:
             }
         }
 
-        return dp[0][1][2];
+        return dp[0][1][k];
     }
 };
