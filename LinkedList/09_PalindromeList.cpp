@@ -1,3 +1,18 @@
+/**
+ * Check if Linked List is Palindrome
+ * -------------------------------------
+ * Optimized approach using slow-fast pointer and in-place reversal.
+ *
+ * Steps:
+ * 1. Find middle of linked list
+ * 2. Reverse second half
+ * 3. Compare both halves
+ * 4. Restore original list (important)
+ *
+ * ⏱ Time Complexity: O(N)
+ * 🗂 Space Complexity: O(1)
+ */
+
 #include <iostream>
 using namespace std;
 
