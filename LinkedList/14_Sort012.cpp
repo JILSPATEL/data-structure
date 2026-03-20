@@ -1,3 +1,26 @@
+/**
+ * Problem: Sort a Linked List containing only 0s, 1s, and 2s
+ *
+ * Description:
+ * Given a linked list where nodes contain only values 0, 1, or 2,
+ * sort the list such that all 0s come first, then 1s, then 2s.
+ *
+ * Approaches:
+ *
+ * 1) Brute Force:
+ *    - Count number of 0s, 1s, and 2s
+ *    - Overwrite linked list values accordingly
+ *    - Time: O(N), Space: O(1)
+ *
+ * 2) Better Approach (Used Here - Segregation using 3 lists):
+ *    - Create three dummy lists for 0s, 1s, and 2s
+ *    - Traverse original list and attach nodes accordingly
+ *    - Merge three lists at the end
+ *    - Time: O(N), Space: O(1) (no extra nodes, just pointers)
+ *
+ * Key Idea:
+ *    Maintain three separate chains and then connect them.
+ */
 #include <iostream>
 using namespace std;
 
