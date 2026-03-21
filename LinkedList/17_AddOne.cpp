@@ -37,7 +37,6 @@ Node* addOne(Node* &head){
 
         if (carry == 0) break;
 
-        // Move to next node
         if (!temp->next && carry) {
             temp->next = new Node(carry);
             carry = 0;
