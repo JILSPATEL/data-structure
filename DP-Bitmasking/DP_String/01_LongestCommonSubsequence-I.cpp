@@ -13,7 +13,7 @@ s2 = "ace"
 The longest common subsequence is "ace".
 So the answer = 3.
 
-Approach 1: Dynamic Programming (Tabulation)
+Approach 1: Tabulation
 
 Idea:
 Let dp[i][j] represent the length of LCS between:
