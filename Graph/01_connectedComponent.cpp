@@ -1,3 +1,25 @@
+/**
+ * Problem: Connected Components in an Undirected Graph
+ * Approach: Depth First Search (DFS)
+ *
+ * Description:
+ * Given V vertices and a list of undirected edges, find all connected components.
+ * Each connected component is a group of vertices reachable from each other.
+ *
+ * Example:
+ * Input:
+ * 5 3
+ * 0 1
+ * 1 2
+ * 3 4
+ *
+ * Output:
+ * 0 1 2
+ * 3 4
+ *
+ * Time Complexity: O(V + E)
+ * Space Complexity: O(V + E)
+ */
 #include <bits/stdc++.h>
 using namespace std;
 

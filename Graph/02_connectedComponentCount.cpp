@@ -1,3 +1,24 @@
+/**
+ * Problem: Count Connected Components in an Undirected Graph
+ * Approach: Depth First Search (DFS)
+ *
+ * Description:
+ * Given V vertices and a list of undirected edges, count how many connected components exist.
+ * Each unvisited vertex starts a DFS and increases the component count.
+ *
+ * Example:
+ * Input:
+ * 5 3
+ * 0 1
+ * 1 2
+ * 3 4
+ *
+ * Output:
+ * 2
+ *
+ * Time Complexity: O(V + E)
+ * Space Complexity: O(V + E)
+ */
 #include <bits/stdc++.h>
 using namespace std;
 
