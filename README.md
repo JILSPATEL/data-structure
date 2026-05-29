@@ -12,6 +12,7 @@
 - [Binary Search](Binary%20Search/)
 
 - [BinaryTree](BinaryTree/)
+	- [Traversals](BinaryTree/Traversals/)
 
 - [DP-Bitmasking](DP-Bitmasking/)
 	- [1D_DP](DP-Bitmasking/1D_DP/)
