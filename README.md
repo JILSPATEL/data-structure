@@ -14,6 +14,7 @@
 - [BinaryTree](BinaryTree/)
 	- [Traversals](BinaryTree/Traversals/)
 	- [Medium_Problems](BinaryTree/Medium/)
+	- [Hard_Problems](BinaryTree/Hard/)
 
 - [DP-Bitmasking](DP-Bitmasking/)
 	- [1D_DP](DP-Bitmasking/1D_DP/)
