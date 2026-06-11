@@ -1,6 +1,25 @@
 /**
  * Problem: Find the City With the Smallest Number of Neighbors at a Threshold Distance
  *
+ * Description:
+ * Given n cities and distance limits, find the city with
+ * the smallest number of neighbors within threshold distance.
+ *
+ * Example 1:
+ * Input: n=4, edges=[[0,1,3],[1,2,1],[1,3,4],[2,3,1]], distanceThreshold=4
+ * Output: 3
+ * Explanation: City 3 can reach cities {0,1,2} which equals threshold
+ *
+ * Example 2:
+ * Input: n=5, edges=[[0,1,2],[0,4,8],[1,2,3],[1,4,2],[2,3,1],[3,4,1]], distanceThreshold=2
+ * Output: 0
+ * Explanation: City 0 has minimum neighbors within distance 2
+ *
+ * Example 3:
+ * Input: n=6, edges=[[0,1,2],[0,2,4],[1,2,3],[1,3,1],[2,3,1],[2,4,5],[3,4,1],[3,5,3],[4,5,2]], distanceThreshold=3
+ * Output: 5
+ * Explanation: City 5 has fewest neighbors within threshold
+ *
  * Approach: Dijkstra from every city
  *
  * Idea:

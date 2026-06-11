@@ -8,6 +8,21 @@
  * 4. Update distance when a shorter path is found.
  * 5. Convert unreachable nodes (INF) to -1.
  *
+ * Example 1:
+ * Input: V=6, edges=[[0,1],[0,2],[2,3],[3,4],[3,5]], src=0
+ * Output: [0,1,1,2,3,3]
+ * Explanation: Distance from 0 to each node
+ *
+ * Example 2:
+ * Input: V=4, edges=[[0,1],[1,2],[2,3]], src=0
+ * Output: [0,1,2,3]
+ * Explanation: Linear chain path
+ *
+ * Example 3:
+ * Input: V=5, edges=[[0,1],[2,3]], src=0
+ * Output: [0,1,-1,-1,-1]
+ * Explanation: Disconnected components
+ *
  * Possible Approaches:
  * 1. BFS (Used here) → O(V + E) for unweighted graphs.
  * 2. Dijkstra → Used for weighted graphs.

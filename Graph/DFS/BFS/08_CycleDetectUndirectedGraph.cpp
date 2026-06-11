@@ -10,6 +10,24 @@
  * 4. If a visited neighbour is found that is NOT the parent,
  *    then cycle exists.
  *
+ * Example 1:
+ * V = 5, E = 5
+ * Edges: (0,1), (0,2), (1,2), (2,3), (3,4)
+ * Output: true
+ * Explanation: Cycle exists: 0-1-2-0
+ *
+ * Example 2:
+ * V = 4, E = 3
+ * Edges: (0,1), (0,2), (1,3)
+ * Output: false
+ * Explanation: No cycle, it's a tree structure
+ *
+ * Example 3:
+ * V = 3, E = 3
+ * Edges: (0,1), (1,2), (2,0)
+ * Output: true
+ * Explanation: Triangle cycle: 0-1-2-0
+ *
  * Time Complexity:
  * O(V + E)
  *

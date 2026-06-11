@@ -12,6 +12,21 @@
  * If some node cannot be reached,
  * return -1.
  *
+ * Example 1:
+ * Input: times=[[1,2,1],[2,3,2],[1,3,4]], n=3, k=1
+ * Output: 4
+ * Explanation: Time to reach node 3 is 4 (1→2→3)
+ *
+ * Example 2:
+ * Input: times=[[1,2,1],[2,3,2],[1,3,4]], n=3, k=2
+ * Output: 3
+ * Explanation: Starting from node 2, reach node 3 in time 2+1
+ *
+ * Example 3:
+ * Input: times=[[1,2,1]], n=2, k=2
+ * Output: -1
+ * Explanation: Node 1 unreachable from node 2
+ *
  * Approach: Dijkstra
  *
  * Idea:

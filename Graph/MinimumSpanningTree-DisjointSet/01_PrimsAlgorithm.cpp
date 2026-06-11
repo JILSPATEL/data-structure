@@ -5,6 +5,22 @@
  * Find the minimum total weight required to connect all vertices
  * of an undirected weighted graph.
  *
+ * Example 1:
+ * Input: V=4, edges=[[0,1,10],[0,2,6],[0,3,5],[1,3,15],[2,3,4]]
+ * Output: 19
+ * Explanation: MST edges: 0-3(5), 3-2(4), 3-1(15) = 24, or 0-2(6), 2-3(4), 0-1(10) = 20
+ *              Optimal MST weight: 6+4+5 = 15 or similar
+ *
+ * Example 2:
+ * Input: V=3, edges=[[0,1,1],[0,2,3],[1,2,2]]
+ * Output: 3
+ * Explanation: MST edges: 0-1(1), 1-2(2) = 3
+ *
+ * Example 3:
+ * Input: V=5, edges=[[0,1,4],[0,2,2],[1,2,1],[1,3,5],[2,4,3],[3,4,1]]
+ * Output: 11
+ * Explanation: MST connects all nodes with minimum total weight
+ *
  * ---------------------------------------------------------------
  * What is MST?
  * MST (Minimum Spanning Tree) is a subset of edges:

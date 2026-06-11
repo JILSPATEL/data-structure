@@ -32,6 +32,21 @@
  *    Time Complexity: O(n² log(n²))
  *    Space Complexity: O(n²)
  *
+ * Example 1:
+ * Input: grid = [[0,1],[1,0]]
+ * Output: 2
+ * Explanation: Path: (0,0) → (1,1)
+ * 
+ * Example 2:
+ * Input: grid = [[0,0,0],[1,1,0],[1,1,0]]
+ * Output: 4
+ * Explanation: Shortest path has 4 steps
+ *
+ * Example 3:
+ * Input: grid = [[1,0],[0,1]]
+ * Output: -1
+ * Explanation: No valid path (start/end is blocked)
+ *
  * Why BFS is preferred?
  * Since all edges have equal weight (=1),
  * BFS naturally gives shortest distance with

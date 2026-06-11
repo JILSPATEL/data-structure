@@ -5,6 +5,21 @@
  * Finds the shortest distance between every pair of vertices
  * in a weighted graph (All-Pairs Shortest Path).
  *
+ * Example 1:
+ * Input: V=4, edges=[[0,1,5],[0,3,9],[1,2,3],[3,2,2],[1,3,2]]
+ * Output: All-pairs shortest distances
+ * dist[0][2]=8, dist[1][2]=3, etc.
+ *
+ * Example 2:
+ * Input: V=3, edges=[[0,1,3],[1,2,4],[0,2,5]]
+ * Output: Direct paths and indirect paths compared
+ * dist[0][2]=5 (direct) vs dist[0][1]+dist[1][2]=7
+ *
+ * Example 3:
+ * Input: V=3, edges=[[0,1,1],[1,2,-1],[2,0,-2]]
+ * Output: Detects negative cycle
+ * dist[i][i] < 0 indicates negative cycle
+ *
  * Works with:
  * - Directed graphs
  * - Undirected graphs

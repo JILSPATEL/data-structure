@@ -8,6 +8,21 @@
  * Find the minimum cost from src → dst
  * with at most k stops.
  *
+ * Example 1:
+ * Input: n=3, flights=[[0,1,100],[1,2,100],[0,2,500]], src=0, dst=2, k=1
+ * Output: 200
+ * Explanation: Path 0→1→2 costs 200 with 1 stop
+ *
+ * Example 2:
+ * Input: n=3, flights=[[0,1,100],[1,2,100],[0,2,500]], src=0, dst=2, k=0
+ * Output: 500
+ * Explanation: Direct flight costs 500 with 0 stops
+ *
+ * Example 3:
+ * Input: n=4, flights=[[0,1,1],[0,2,5],[1,2,1],[1,3,4],[2,3,1]], src=0, dst=3, k=2
+ * Output: 6
+ * Explanation: Optimal path with stop constraint
+ *
  * ----------------------------------------------------
  * Approach 1: Normal Queue (BFS Level Traversal)
  * ----------------------------------------------------

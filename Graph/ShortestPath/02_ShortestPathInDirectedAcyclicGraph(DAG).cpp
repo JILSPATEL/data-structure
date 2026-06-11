@@ -6,6 +6,21 @@
  * find the shortest distance from source node 0 to all
  * other nodes.
  *
+ * Example 1:
+ * Input: V=6, edges=[[0,1,2],[0,4,1],[1,2,3],[4,2,2],[2,3,6],[4,5,4],[5,3,1]]
+ * Output: [0,2,3,5,1,5]
+ * Explanation: Shortest distances from node 0
+ *
+ * Example 2:
+ * Input: V=3, edges=[[0,1,2],[0,2,4],[1,2,1]]
+ * Output: [0,2,3]
+ * Explanation: Path 0→1→2 is shorter than 0→2
+ *
+ * Example 3:
+ * Input: V=4, edges=[[0,1,3],[1,2,2],[2,3,5]]
+ * Output: [0,3,5,10]
+ * Explanation: Linear path accumulates weights
+ *
  * ---------------------------------------------------------
  * Approach: Topological Sort + Edge Relaxation
  * ---------------------------------------------------------

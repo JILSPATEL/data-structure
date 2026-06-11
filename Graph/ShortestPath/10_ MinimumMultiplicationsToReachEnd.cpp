@@ -1,6 +1,25 @@
 /**
  * Problem: Minimum Multiplications to Reach End
  *
+ * Description:
+ * Given an array of multipliers and target number,
+ * find minimum operations to reach target.
+ *
+ * Example 1:
+ * Input: arr=[2,3,4], start=1, end=8
+ * Output: 2
+ * Explanation: 1→2→8 or 1→3→12→... (choose 2 operations)
+ *
+ * Example 2:
+ * Input: arr=[3,5], start=2, end=10
+ * Output: -1
+ * Explanation: Cannot reach 10 from 2 with multipliers [3,5]
+ *
+ * Example 3:
+ * Input: arr=[2,4,5,6,7], start=10, end=100000
+ * Output: 4
+ * Explanation: Optimal multiplications to reach target
+ *
  * Approach 1: BFS (Optimal)
  *
  * Observation:

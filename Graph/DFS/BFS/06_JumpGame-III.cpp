@@ -16,6 +16,21 @@
  * 4. If current value becomes 0 -> return true.
  * 5. Recursively check both forward and backward jumps.
  * 
+ * Example 1:
+ * Input: arr = [4,2,3,0,3,1,2], start = 5
+ * Output: true
+ * Explanation: Path: 5 → 4 → 1 → 3 → 0
+ * 
+ * Example 2:
+ * Input: arr = [4,2,3,0,3,1,2], start = 0
+ * Output: true
+ * Explanation: Path: 0 → 4 → 1 → 3 → 0
+ * 
+ * Example 3:
+ * Input: arr = [3,0,2,6,2], start = 2
+ * Output: false
+ * Explanation: Can't reach index with value 0
+ * 
  * Time Complexity: O(n)
  * Space Complexity: O(n)
  */

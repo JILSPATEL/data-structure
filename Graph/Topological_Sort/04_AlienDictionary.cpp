@@ -5,6 +5,21 @@
  * Given a sorted dictionary of an alien language, determine the order
  * of characters in that language using Topological Sort (Kahn's Algorithm).
  *
+ * Example 1:
+ * Input: words = ["wrt","wrf","er","ett","rftt"]
+ * Output: "wertf"
+ * Explanation: Alien character order
+ *
+ * Example 2:
+ * Input: words = ["z","x"]
+ * Output: "zx"
+ * Explanation: 'z' comes before 'x'
+ *
+ * Example 3:
+ * Input: words = ["z","x","z"]
+ * Output: ""
+ * Explanation: Invalid ordering (z appears both before and after itself)
+ *
  * Approach 1: Kahn's Algorithm (BFS Topological Sort) [Used]
  * 1. Collect all unique characters.
  * 2. Compare adjacent words:

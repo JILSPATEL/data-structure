@@ -14,6 +14,21 @@
  *
  * then u must appear before v.
  *
+ * Example 1:
+ * Input: V = 4, edges = [[1,0],[2,0],[3,1],[3,2]]
+ * Output: [0,1,2,3]
+ * Explanation: Valid topological ordering
+ *
+ * Example 2:
+ * Input: V = 2, edges = [[1,0],[0,1]]
+ * Output: []
+ * Explanation: Cycle exists, no valid ordering
+ *
+ * Example 3:
+ * Input: V = 3, edges = [[0,1],[0,2]]
+ * Output: [1,2,0] or [2,1,0]
+ * Explanation: Multiple valid orderings exist
+ *
  * ---------------------------------------------------
  * Algorithm Used:
  * Kahn's Algorithm (BFS Topological Sort)

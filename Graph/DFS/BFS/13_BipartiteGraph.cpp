@@ -21,6 +21,21 @@
  * 4. If two adjacent nodes have same color,
  *    graph is not bipartite.
  *
+ * Example 1:
+ * Input: graph = [[1,3],[0,2],[1,3],[0,2]]
+ * Output: true
+ * Explanation: Partition: {0,2}, {1,3}
+ *
+ * Example 2:
+ * Input: graph = [[1,2,3],[0,2],[0,1,3],[0,2]]
+ * Output: false
+ * Explanation: No valid 2-coloring possible
+ *
+ * Example 3:
+ * Input: graph = [[],[1],[0,3],[2]]
+ * Output: true
+ * Explanation: Partition: {0,3}, {1,2}
+ *
  * ---------------------------------------------------
  * Time Complexity:
  * O(V + E)

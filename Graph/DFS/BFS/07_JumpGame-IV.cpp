@@ -20,6 +20,21 @@
  *      After processing a value once,
  *      clear its vector to avoid TLE.
  *
+ * Example 1:
+ * Input: arr = [100,-23,-23,404,100,100,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23]
+ * Output: 6
+ * Explanation: Jump using values at same indices
+ *
+ * Example 2:
+ * Input: arr = [7]
+ * Output: 0
+ * Explanation: Single element - already at end
+ *
+ * Example 3:
+ * Input: arr = [7,6,9,6,9,6,9,7]
+ * Output: 1
+ * Explanation: Jump to index 7 (0→7) or use same values
+ *
  * Time Complexity: O(n)
  * Space Complexity: O(n)
  */

@@ -5,6 +5,21 @@
  * Finds the shortest distance from source node `src`
  * to all other vertices in a weighted directed graph.
  *
+ * Example 1:
+ * Input: V=5, edges=[[0,1,4],[0,2,1],[2,1,2],[1,3,1],[2,3,5],[3,4,3]], src=0
+ * Output: [0,3,1,4,7]
+ * Explanation: Shortest distances from node 0
+ *
+ * Example 2:
+ * Input: V=3, edges=[[0,1,2],[1,2,3],[0,2,6]], src=0
+ * Output: [0,2,5]
+ * Explanation: Path 0→1→2 is shorter than 0→2
+ *
+ * Example 3:
+ * Input: V=4, edges=[[0,1,1],[1,2,2],[2,3,1]], src=0
+ * Output: [0,1,3,4]
+ * Explanation: Linear weighted path
+ *
  * Approaches:
  * 1. Brute Force:
  *    - Time: O(V²)

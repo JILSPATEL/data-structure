@@ -13,6 +13,21 @@
  * 6. If visited nodes != total vertices,
  *    then graph contains a cycle.
  *
+ * Example 1:
+ * Input: V = 4, edges = [[0,1], [1,2], [2,3]]
+ * Output: false
+ * Explanation: No cycle, valid topological ordering exists
+ *
+ * Example 2:
+ * Input: V = 3, edges = [[0,1], [1,2], [2,0]]
+ * Output: true
+ * Explanation: Cycle exists: 0→1→2→0
+ *
+ * Example 3:
+ * Input: V = 5, edges = [[0,1], [1,2], [2,3], [3,4], [4,2]]
+ * Output: true
+ * Explanation: Cycle exists: 2→3→4→2
+ *
  * Time Complexity: O(V + E)
  * Space Complexity: O(V + E)
  */

@@ -36,6 +36,21 @@
  *    Time: O(n² log(n²))
  *    Space: O(n²)
  *
+ * Example 1:
+ * Input: grid = [[0,1],[1,0]]
+ * Output: 2
+ * Explanation: Path: (0,0) → (1,1) with diagonal move
+ *
+ * Example 2:
+ * Input: grid = [[0,0,0],[1,1,0],[1,1,0]]
+ * Output: 4
+ * Explanation: Navigate around obstacles
+ *
+ * Example 3:
+ * Input: grid = [[1,0],[0,1]]
+ * Output: -1
+ * Explanation: No valid path exists
+ *
  * ---------------------------------------------------------
  * Dijkstra Idea:
  *

@@ -8,6 +8,21 @@
  * Effort of a path:
  * Maximum absolute difference between heights of consecutive cells.
  *
+ * Example 1:
+ * Input: heights = [[1,2,2],[3,8,2],[5,3,5]]
+ * Output: 2
+ * Explanation: Path with maximum step of 2
+ *
+ * Example 2:
+ * Input: heights = [[1,2,3],[3,2,1]]
+ * Output: 1
+ * Explanation: All steps are at most 1
+ *
+ * Example 3:
+ * Input: heights = [[1,4,3],[3,2,9],[2,5,4]]
+ * Output: 3
+ * Explanation: Optimal path minimizes maximum effort
+ *
  * Approaches:
  *
  * 1) Brute Force:

@@ -6,6 +6,21 @@
  * in a weighted graph. Works for both positive and negative
  * edge weights and can also detect negative weight cycles.
  *
+ * Example 1:
+ * Input: V=5, edges=[[0,1,4],[0,2,2],[1,2,1],[1,3,5],[2,3,8],[2,4,-3],[4,3,-5]], src=0
+ * Output: [0,4,2,1,-1]
+ * Explanation: Shortest distances from node 0
+ *
+ * Example 2:
+ * Input: V=3, edges=[[1,2,-3],[2,0,4],[0,1,-2]], src=0
+ * Output: [0,-2,-5]
+ * Explanation: Negative weights handled correctly
+ *
+ * Example 3:
+ * Input: V=3, edges=[[0,1,1],[1,2,-2],[2,1,1]], src=0
+ * Output: [-1]
+ * Explanation: Negative cycle detected
+ *
  * Approaches:
  * 1. Bellman-Ford (Relax all edges V-1 times)
  *    Time Complexity: O(V * E)

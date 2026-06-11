@@ -1,6 +1,25 @@
 /**
  * Problem: Number of Ways to Arrive at Destination
  *
+ * Description:
+ * Count the number of shortest paths from node 0 to node n-1
+ * in a weighted undirected graph.
+ *
+ * Example 1:
+ * Input: n=6, roads=[[0,1,4],[0,2,1],[1,3,2],[2,1,3],[1,4,1],[4,3,1],[2,4,5],[4,5,2],[3,5,1]]
+ * Output: 1
+ * Explanation: Only one shortest path exists
+ *
+ * Example 2:
+ * Input: n=4, roads=[[0,1,1],[1,2,1],[2,3,1],[0,3,3],[1,3,2]]
+ * Output: 2
+ * Explanation: Two different shortest paths to destination
+ *
+ * Example 3:
+ * Input: n=3, roads=[[0,1,1],[0,2,1],[1,2,1]]
+ * Output: 1
+ * Explanation: Direct paths both have same distance
+ *
  * Approach 1: Brute Force
  * - Generate all possible paths from source (0) to destination (n-1)
  * - Find shortest distance and count paths having that distance

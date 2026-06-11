@@ -6,6 +6,21 @@
  * A node is safe if every possible path starting from it
  * leads to a terminal node (node with no outgoing edges).
  *
+ * Example 1:
+ * Input: graph = [[1,2],[2,3],[5],[0],[5],[]]
+ * Output: [2,4,5,6]
+ * Explanation: Nodes 2,4,5,6 are safe states
+ *
+ * Example 2:
+ * Input: graph = [[1,2],[2,3],[5],[0],[5],[]]
+ * Output: [4,5,6]
+ * Explanation: Nodes 4,5,6 eventually lead to terminal states
+ *
+ * Example 3:
+ * Input: graph = [[1],[2],[3],[0]]
+ * Output: []
+ * Explanation: All nodes are in a cycle
+ *
  * Approaches:
  * 1. DFS + Cycle Detection
  *    - Use recursion with visited/pathVisited arrays.

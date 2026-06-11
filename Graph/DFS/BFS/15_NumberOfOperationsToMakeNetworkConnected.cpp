@@ -23,6 +23,21 @@
  * If there are k components,
  * we need exactly k - 1 operations to connect them.
  *
+ * Example 1:
+ * Input: n = 4, connections = [[0,1],[0,2],[1,2]]
+ * Output: 1
+ * Explanation: 1 redundant cable, can connect all
+ *
+ * Example 2:
+ * Input: n = 6, connections = [[0,1],[0,2],[0,3],[1,2],[1,3]]
+ * Output: 2
+ * Explanation: 3 components initially, need 2 operations
+ *
+ * Example 3:
+ * Input: n = 6, connections = [[0,1],[0,2],[0,3],[1,2]]
+ * Output: -1
+ * Explanation: Not enough cables (need at least 5 for 6 nodes)
+ *
  * ---------------------------------------------------------
  * Approach:
  *

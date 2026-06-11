@@ -53,34 +53,32 @@
  * So we insert all of them initially into queue.
  *
  * -------------------------------------------------------------------
- * DRY RUN
+ * Example
  * -------------------------------------------------------------------
  *
- * Grid:
- *
+ * Example 1:
+ * Input:
  * 0 0 0 0
  * 1 0 1 0
  * 0 1 1 0
  * 0 0 0 0
+ * Output: 3
  *
- * Boundary land cells:
- * -> (1,0)
+ * Example 2:
+ * Input:
+ * 0 0 0 1 1 1
+ * 0 1 1 1 1 0
+ * 0 1 0 1 0 0
+ * Output: 1
  *
- * Start BFS from (1,0)
- *
- * Visited after BFS:
- *
+ * Example 3:
+ * Input:
  * 0 0 0 0
- * 1 0 0 0
+ * 0 1 1 0
+ * 0 1 1 0
  * 0 0 0 0
- * 0 0 0 0
- *
- * Remaining unvisited land cells:
- * -> (1,2)
- * -> (2,1)
- * -> (2,2)
- *
- * Answer = 3
+ * Output: 4
+ * Explanation: All 4 cells in the middle are enclaves
  *
  * -------------------------------------------------------------------
  * TIME COMPLEXITY
