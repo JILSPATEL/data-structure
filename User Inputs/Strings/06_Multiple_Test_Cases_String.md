@@ -16,23 +16,33 @@ racecar
 using namespace std;
 
 bool palindrome(string s) {
-    string t=s;
-    reverse(t.begin(),t.end());
-    return s==t;
+    string t = s;
+    reverse(t.begin(), t.end());
+    return s == t;
 }
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
     int t;
     cin >> t;
 
-    while(t--) {
+    vector<string> ans;
 
+    while (t--) {
         string s;
         cin >> s;
 
-        cout << (palindrome(s) ? "YES" : "NO") << '\n';
+        ans.push_back(
+            palindrome(s) ? "YES" : "NO"
+        );
     }
+
+    for (string x : ans)
+        cout << x << '\n';
+
+    return 0;
 }
 ```
 
@@ -44,11 +54,9 @@ import java.util.*;
 public class Main {
 
     static boolean palindrome(String s) {
-
-        String rev =
-            new StringBuilder(s).reverse().toString();
-
-        return s.equals(rev);
+        return s.equals(
+            new StringBuilder(s).reverse().toString()
+        );
     }
 
     public static void main(String[] args) {
@@ -57,14 +65,18 @@ public class Main {
 
         int t = sc.nextInt();
 
-        while(t-- > 0) {
+        List<String> ans = new ArrayList<>();
 
+        while (t-- > 0) {
             String s = sc.next();
 
-            System.out.println(
+            ans.add(
                 palindrome(s) ? "YES" : "NO"
             );
         }
+
+        for (String x : ans)
+            System.out.println(x);
     }
 }
 ```
@@ -74,14 +86,18 @@ public class Main {
 ```python
 t = int(input())
 
-for _ in range(t):
+ans = []
 
+for _ in range(t):
     s = input().strip()
 
-    print(
+    ans.append(
         "YES" if s == s[::-1]
         else "NO"
     )
+
+for x in ans:
+    print(x)
 ```
 
 ## Example
