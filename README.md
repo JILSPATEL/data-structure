@@ -46,4 +46,4 @@
 
 - [TwoPointer-SlidingWindow](TwoPointer-SlidingWindow/)
 
-Click a link to open that folder (or its README) in the repository viewer.
+Click a link to open that folder in the repository viewer.
