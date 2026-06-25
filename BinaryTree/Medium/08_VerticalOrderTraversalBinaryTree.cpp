@@ -94,6 +94,7 @@ public:
 
             // New column encountered
             if (prevCol != col) {
+                
                 res.push_back(currentColumn);
 
                 currentColumn.clear();
@@ -109,4 +110,56 @@ public:
 
         return res;
     }
+};
+
+
+//approach-2 GFG
+
+/*
+Definition for Node
+class Node {
+	public:
+	int data;
+	Node* left;
+	Node* right;
+	
+	Node(int val) {
+		data = val;
+		left = right = nullptr;
+	}
+};
+*/
+
+class Solution {
+	public:
+	vector<vector<int>> verticalOrder(Node *root) {
+		vector<vector<int>> res;
+		if (!root)
+			return res;
+		
+		map<int, vector<int>> mp;
+		queue<pair<Node*, int>> q;
+		
+		q.push({root, 0});
+		
+		while (!q.empty()) {
+			auto curr = q.front();
+			q.pop();
+			Node* node = curr.first;
+			int col = curr.second;
+			mp[col].push_back(node->data);
+			if (node->left) {
+				q.push({node->left, col - 1});
+			}
+			
+			if (node->right) {
+				q.push({node->right, col + 1});
+			}
+			
+		}
+		for (auto &it : mp) {
+			res.push_back(it.second);
+		}
+		return res;
+	}
 };
