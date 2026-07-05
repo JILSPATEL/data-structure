@@ -1,49 +1,69 @@
-# Data Structure Notes
+# 📚 Data Structure & Algorithm Notes
 
-## Hierarchy
+> A curated collection of DSA practice, solutions, and reference implementations.
+
+---
+
+## 🗂️ Repository Structure
+
+### 🧮 Algorithm
 
 - [algorithm](algorithm/)
-	- [Practice Problems-1](algorithm/Practice%20Problems-1/)
-	- [sorting-searching_assignment-2](algorithm/sorting-searching_assignment-2/)
-	- [stack-queue_assignment-1](algorithm/stack-queue_assignment-1/)
+   - [Practice Problems-1](algorithm/Practice%20Problems-1/)
+   - [Sorting & Searching — Assignment 2](algorithm/sorting-searching_assignment-2/)
+   - [Stack & Queue — Assignment 1](algorithm/stack-queue_assignment-1/)
+
+### 🔢 Core Structures
 
 - [Array](Array/)
-
 - [Binary Search](Binary%20Search/)
-
-- [BinaryTree](BinaryTree/)
-	- [Traversals](BinaryTree/Traversals/)
-	- [Medium_Problems](BinaryTree/Medium/)
-	- [Hard_Problems](BinaryTree/Hard/)
-
-- [DP-Bitmasking](DP-Bitmasking/)
-	- [1D_DP](DP-Bitmasking/1D_DP/)
-	- [2D_DP](DP-Bitmasking/2D_DP/)
-	- [3D_DP](DP-Bitmasking/3D_DP/)
-	- [DP_Advance](DP-Bitmasking/DP_Advance/)
-	- [DP_LIS](DP-Bitmasking/DP_LIS/)
-	- [DP_MCM](DP-Bitmasking/DP_MCM/)
-	- [DP_Stocks](DP-Bitmasking/DP_Stocks/)
-	- [DP_String](DP-Bitmasking/DP_String/)
-	- [DP_Subsequence](DP-Bitmasking/DP_Subsequence/)
-
-- [Graph](Graph/)
-	- [DFS](Graph/DFS/)
-	- [MinimumSpanningTree-DisjointSet](Graph/MinimumSpanningTree-DisjointSet/)
-	- [ShortestPath](Graph/ShortestPath/)
-	- [Topological_Sort](Graph/Topological_Sort/)
-
-- [Greedy](Greedy/)
-
-- [Heaps](Heaps/)
-
 - [LinkedList](LinkedList/)
-	- [DLL](LinkedList/DLL/)
-
+   - [DLL](LinkedList/DLL/)
+- [Stack-Queue](Stack-Queue/)
+- [Heaps](Heaps/)
 - [SegmentTree](SegmentTree/)
 
-- [Stack-Queue](Stack-Queue/)
+### 🌳 Binary Tree
 
-- [TwoPointer-SlidingWindow](TwoPointer-SlidingWindow/)
+- [BinaryTree](BinaryTree/)
+   - [Traversals](BinaryTree/Traversals/)
+   - [Medium Problems](BinaryTree/Medium/)
+   - [Hard Problems](BinaryTree/Hard/)
 
-Click a link to open that folder in the repository viewer.
+### 🧠 Dynamic Programming & Bitmasking
+
+- [DP-Bitmasking](DP-Bitmasking/)
+   - [1D DP](DP-Bitmasking/1D_DP/)
+   - [2D DP](DP-Bitmasking/2D_DP/)
+   - [3D DP](DP-Bitmasking/3D_DP/)
+   - [DP — Advanced](DP-Bitmasking/DP_Advance/)
+   - [DP — LIS](DP-Bitmasking/DP_LIS/)
+   - [DP — MCM](DP-Bitmasking/DP_MCM/)
+   - [DP — Stocks](DP-Bitmasking/DP_Stocks/)
+   - [DP — String](DP-Bitmasking/DP_String/)
+   - [DP — Subsequence](DP-Bitmasking/DP_Subsequence/)
+
+### 🕸️ Graph
+
+- [Graph](Graph/)
+   - [DFS](Graph/DFS/)
+   - [Minimum Spanning Tree & Disjoint Set](Graph/MinimumSpanningTree-DisjointSet/)
+   - [Shortest Path](Graph/ShortestPath/)
+   - [Topological Sort](Graph/Topological_Sort/)
+
+### ⚡ Problem-Solving Techniques
+
+- [Greedy](Greedy/)
+- [Two Pointer & Sliding Window](TwoPointer-SlidingWindow/)
+
+### 🛠️ Practice & Inputs
+
+- [Practice](Practice/)
+   - [Graph](Practice/Graph/)
+- [User Input](UserInputs/)
+   - [Array](UserInputs/Array/)
+   - [String](UserInputs/Strings/)
+
+---
+
+💡 *Click any link above to jump straight to that folder in the repository viewer.*
