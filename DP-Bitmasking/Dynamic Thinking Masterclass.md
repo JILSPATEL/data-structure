@@ -125,8 +125,8 @@ This is the **same shape** as climbing stairs (`dp[i]` from `dp[i-1]`, `dp[i-2]`
 **Recurrence:**
 ```
 dp[i] = max(nums[i], dp[i-1] + nums[i])
-```//Either start a new subarray at i, or extend the previous best.
-
+//Either start a new subarray at i, or extend the previous best.
+```
 **Base case:** `dp[0] = nums[0]`.
 
 **Answer:** `max(dp)` over all i — note the *table* answers "ending at i," but the *problem* asks for the best over all ending points, so the final answer is a max-reduction over the table, not just `dp[n-1]`. This distinction (state ≠ final answer; final answer is often a function *over* the state array) trips up beginners constantly — always ask "is my final answer dp[n], or some aggregate over the whole dp array?"
