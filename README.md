@@ -47,6 +47,7 @@
 
 - [Graph](Graph/)
    - [DFS](Graph/DFS/)
+   - [DSU](Graph/DSU/)
    - [Minimum Spanning Tree & Disjoint Set](Graph/MinimumSpanningTree-DisjointSet/)
    - [Shortest Path](Graph/ShortestPath/)
    - [Topological Sort](Graph/Topological_Sort/)
