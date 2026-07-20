@@ -126,3 +126,60 @@ public:
 * ---
 
 */
+/*
+ Tabulation-only solution for House Robber II (circular houses)
+
+ Usage (stdin):
+ First line: n (number of houses)
+ Next n values: values in houses
+
+ Example:
+ 3
+ 2 3 2
+
+ Output: 3
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int robLinearTab(const vector<int>& nums) {
+    int n = nums.size();
+    if (n == 0) return 0;
+    if (n == 1) return nums[0];
+
+    vector<int> dp(n);
+    dp[0] = nums[0];
+    dp[1] = max(nums[0], nums[1]);
+    for (int i = 2; i < n; ++i) {
+        dp[i] = max(dp[i - 1], nums[i] + dp[i - 2]);
+    }
+    return dp[n - 1];
+}
+
+int robTab(vector<int>& nums) {
+    int n = nums.size();
+    if (n == 0) return 0;
+    if (n == 1) return nums[0];
+
+    // Case 1: exclude first element -> consider [1..n-1]
+    vector<int> a(nums.begin() + 1, nums.end());
+
+    // Case 2: exclude last element -> consider [0..n-2]
+    vector<int> b(nums.begin(), nums.end() - 1);
+
+    return max(robLinearTab(a), robLinearTab(b));
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n;
+    if (!(cin >> n)) return 0;
+    vector<int> nums(n);
+    for (int i = 0; i < n; ++i) cin >> nums[i];
+
+    cout << robTab(nums) << '\n';
+    return 0;
+}
