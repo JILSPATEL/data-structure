@@ -19,9 +19,8 @@
  * Explanation: Direct flight costs 500 with 0 stops
  *
  * Example 3:
- * Input: n=4, flights=[[0,1,1],[0,2,5],[1,2,1],[1,3,4],[2,3,1]], src=0, dst=3, k=2
- * Output: 6
- * Explanation: Optimal path with stop constraint
+ * Input: n=4, flights=[[0,1,1],[0,2,5],[1,2,1],[1,3,4],[2,3,1]], src=0, dst=3,
+ * k=2 Output: 6 Explanation: Optimal path with stop constraint
  *
  * ----------------------------------------------------
  * Approach 1: Normal Queue (BFS Level Traversal)
@@ -84,125 +83,108 @@
  *      O(V * K)
  */
 
-
 // Approach 1: Normal Queue (BFS Level Traversal)
 
 class Solution {
 public:
-    int findCheapestPrice(
-        int n,
-        vector<vector<int>>& flights,
-        int src,
-        int dst,
-        int k
-    ) {
-        vector<vector<pair<int, int>>> adj(n);
+  int findCheapestPrice(int n, vector<vector<int>> &flights, int src, int dst,
+                        int k) {
+    vector<vector<pair<int, int>>> adj(n);
 
-        for (auto& edge : flights) {
-            adj[edge[0]].push_back({edge[1], edge[2]});
-        }
-
-        // Minimum cost to reach node
-        vector<int> minCost(n, 1e9);
-
-        // {stops, {node, cost}}
-        queue<pair<int, pair<int, int>>> q;
-
-        q.push({0, {src, 0}});
-        minCost[src] = 0;
-
-        while (!q.empty()) {
-            auto curr = q.front();
-            q.pop();
-
-            int stops = curr.first;
-            int node = curr.second.first;
-            int cost = curr.second.second;
-
-            if (stops > k)
-                continue;
-
-            for (auto& neb : adj[node]) {
-                int adjNode = neb.first;
-                int wt = neb.second;
-                int newCost = cost + wt;
-
-                if (newCost < minCost[adjNode]) {
-                    minCost[adjNode] = newCost;
-                    q.push({stops + 1, {adjNode, newCost}});
-                }
-            }
-        }
-
-        return minCost[dst] == 1e9 ? -1 : minCost[dst];
+    for (auto &edge : flights) {
+      adj[edge[0]].push_back({edge[1], edge[2]});
     }
-};
 
+    // Minimum cost to reach node
+    vector<int> minCost(n, 1e9);
+
+    // {stops, {node, cost}}
+    queue<pair<int, pair<int, int>>> q;
+
+    q.push({0, {src, 0}});
+    minCost[src] = 0;
+
+    while (!q.empty()) {
+      auto curr = q.front();
+      q.pop();
+
+      int stops = curr.first;
+      int node = curr.second.first;
+      int cost = curr.second.second;
+
+      if (stops > k)
+        continue;
+
+      for (auto &neb : adj[node]) {
+        int adjNode = neb.first;
+        int wt = neb.second;
+        int newCost = cost + wt;
+
+        if (newCost < minCost[adjNode]) {
+          minCost[adjNode] = newCost;
+          q.push({stops + 1, {adjNode, newCost}});
+        }
+      }
+    }
+
+    return minCost[dst] == 1e9 ? -1 : minCost[dst];
+  }
+};
 
 // Approach 2: Priority Queue (Dijkstra Modified)
 
 class Solution {
 public:
-    int findCheapestPrice(
-        int n,
-        vector<vector<int>>& flights,
-        int src,
-        int dst,
-        int k
-    ) {
-        vector<vector<pair<int, int>>> adj(n);
+  int findCheapestPrice(int n, vector<vector<int>> &flights, int src, int dst,
+                        int k) {
+    vector<vector<pair<int, int>>> adj(n);
 
-        for (auto& edge : flights) {
-            adj[edge[0]].push_back({edge[1], edge[2]});
-        }
-
-        // dist[node][stops]
-        vector<vector<int>> dist(
-            n,
-            vector<int>(k + 2, INT_MAX)
-        );
-
-        // {cost, {node, stops}}
-        priority_queue<
-            pair<int, pair<int, int>>,
-            vector<pair<int, pair<int, int>>>,
-            greater<pair<int, pair<int, int>>>
-        > pq;
-
-        pq.push({0, {src, 0}});
-        dist[src][0] = 0;
-
-        while (!pq.empty()) {
-            auto curr = pq.top();
-            pq.pop();
-
-            int currCost = curr.first;
-            int currNode = curr.second.first;
-            int currStops = curr.second.second;
-
-            // Destination reached
-            if (currNode == dst)
-                return currCost;
-
-            if (currStops > k)
-                continue;
-
-            // Ignore outdated state
-            if (currCost > dist[currNode][currStops])
-                continue;
-
-            for (auto& neb : adj[currNode]) {
-                int nextNode = neb.first;
-                int wt = neb.second;
-                int newCost = currCost + wt;
-
-                if (newCost < dist[nextNode][currStops + 1]) {
-                    dist[nextNode][currStops + 1] = newCost;
-                    pq.push({newCost, {nextNode, currStops + 1}});
-                }
-            }
-        }
-
-        return -1;
+    for (auto &edge : flights) {
+      adj[edge[0]].push_back({edge[1], edge[2]});
     }
+
+    // dist[node][stops]
+    vector<vector<int>> dist(n, vector<int>(k + 2, INT_MAX));
+
+    // {cost, {node, stops}}
+    priority_queue<pair<int, pair<int, int>>, vector<pair<int, pair<int, int>>>,
+                   greater<pair<int, pair<int, int>>>>
+        pq;
+
+    pq.push({0, {src, 0}});
+    dist[src][0] = 0;
+
+    while (!pq.empty()) {
+      auto curr = pq.top();
+      pq.pop();
+
+      int currCost = curr.first;
+      int currNode = curr.second.first;
+      int currStops = curr.second.second;
+
+      // Destination reached
+      if (currNode == dst)
+        return currCost;
+
+      if (currStops > k)
+        continue;
+
+      // Ignore outdated state
+      if (currCost > dist[currNode][currStops])
+        continue;
+
+      for (auto &neb : adj[currNode]) {
+        int nextNode = neb.first;
+        int wt = neb.second;
+        int newCost = currCost + wt;
+
+        if (newCost < dist[nextNode][currStops + 1]) {
+          dist[nextNode][currStops + 1] = newCost;
+          pq.push({newCost, {nextNode, currStops + 1}});
+        }
+      }
+    }
+
+    return -1;
+  }
 };
