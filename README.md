@@ -29,6 +29,7 @@
    - [Traversals](BinaryTree/Traversals/)
    - [Medium Problems](BinaryTree/Medium/)
    - [Hard Problems](BinaryTree/Hard/)
+   - [Practice](BinaryTree/Practice/)
 
 ### 🧠 Dynamic Programming & Bitmasking
 
@@ -37,6 +38,7 @@
    - [2D DP](DP-Bitmasking/2D_DP/)
    - [3D DP](DP-Bitmasking/3D_DP/)
    - [DP — Advanced](DP-Bitmasking/DP_Advance/)
+   - [DP — LCS](DP-Bitmasking/DP_LCS/)
    - [DP — LIS](DP-Bitmasking/DP_LIS/)
    - [DP — MCM](DP-Bitmasking/DP_MCM/)
    - [DP — Stocks](DP-Bitmasking/DP_Stocks/)

@@ -145,26 +145,26 @@ public:
     }
 };
 
-/* -------------------- APPROACH 3 : O(N log N) -------------------- */
+/* -------------------- APPROACH 3 : O(N log N) (Patience Sorting)-------------------- */
 
 class SolutionBinarySearch {
 public:
 
     int lis(vector<int>& arr) {
 
-        vector<int> tail;
+        vector<int> sortedArr;
 
         for(int x : arr){
 
-            auto it = lower_bound(tail.begin(), tail.end(), x);
+            auto it = lower_bound(sortedArr.begin(), sortedArr.end(), x);//Find the first element in sortedArr which is >= x
 
-            if(it == tail.end())
-                tail.push_back(x);
+            if(it == sortedArr.end())
+                sortedArr.push_back(x);
             else
                 *it = x;
         }
 
-        return tail.size();
+        return sortedArr.size();
     }
 };
 ```
