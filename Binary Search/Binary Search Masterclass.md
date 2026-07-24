@@ -34,9 +34,9 @@ graph LR
     C --> D[True]
     D --> E[True]
     E --> F[True]
-    style C fill:#f99,stroke:#333,stroke-width:2px
-    style D fill:#9f9,stroke:#333,stroke-width:2px
-    classDef default fill:#ddd,stroke:#333,stroke-width:1px;
+    style C fill:#f99,stroke:#333,stroke-width:2px,color:black
+    style D fill:#9f9,stroke:#333,stroke-width:2px,color:black
+    classDef default fill:#ddd,stroke:#333,stroke-width:1px,color:black;
 ```
 
 Binary Search is the process of finding the **exact boundary** where this switch occurs. If you can prove that your search space is partitioned into a `False` zone and a `True` zone, you can apply Binary Search.
