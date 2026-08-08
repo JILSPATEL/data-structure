@@ -101,7 +101,8 @@ This repository is organized by topic first, then by difficulty or subtopic wher
 
 ### Stack-Queue/
 
-- Problem files in the folder root
+- [stack](Stack-Queue/stack/)
+- [queue](Stack-Queue/queue/)
 
 ### TwoPointer-SlidingWindow/
 
