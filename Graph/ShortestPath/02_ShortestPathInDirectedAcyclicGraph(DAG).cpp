@@ -262,3 +262,48 @@ public:
         return dist;
     }
 };
+
+
+// dijkstra's algorithm implementation for shortest path in a directed graph with only positive weights
+class Solution {
+  public:
+    vector<int> shortestPath(int n, vector<vector<int>>& edges) {
+        vector<vector<pair<int,int>>> adj(n);
+        
+        for (auto &edge : edges) {
+            int u = edge[0];
+            int v = edge[1];
+            int wt = edge[2];
+
+            adj[u].push_back({v, wt});
+        }
+        
+        priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
+        vector<int> dist(n,1e9);
+        
+        dist[0]=0;
+        pq.push({0,0});
+        
+        while(!pq.empty()){
+            auto curr=pq.top();
+            pq.pop();
+            int wt=curr.first;
+            int node=curr.second;
+            if(wt>dist[node]) continue;
+            
+            for(auto [neb,newWt]:adj[node]){
+                if(wt+newWt<dist[neb]){
+                    dist[neb]=wt+newWt;
+                    pq.push({wt+newWt,neb});
+                }
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            if (dist[i] == 1e9)
+                dist[i] = -1;
+        }
+
+        return dist;
+        
+    }
+};
