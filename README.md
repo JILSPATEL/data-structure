@@ -1,28 +1,14 @@
-# Data Structure & Algorithm Notes
+# Data Structures & Algorithms Notes
 
-This repository is organized by topic first, then by difficulty or subtopic where that makes sense.
+This repository contains data structures and algorithm notes, solutions, and
+practice problems organized by topic and difficulty.
+
+Problems are based on challenges from [LeetCode](https://leetcode.com/) and
+[GeeksforGeeks](https://www.geeksforgeeks.org/).
+
+Follow me on [GitHub](https://github.com/JILSPATEL),[Linkdin](https://www.linkedin.com/in/jilspatel29765048/).
 
 ## Repository Hierarchy
-
-### Root
-
-- [README.md](README.md)
-- [count-ubuntu.sh](count-ubuntu.sh)
-- [count-windows.ps1](count-windows.ps1)
-- [algorithm](algorithm/)
-- [Array](Array/)
-- [Binary Search](Binary%20Search/)
-- [BinaryTree](BinaryTree/)
-- [DP-Bitmasking](DP-Bitmasking/)
-- [Graph](Graph/)
-- [Greedy](Greedy/)
-- [Heaps](Heaps/)
-- [LinkedList](LinkedList/)
-- [Practice](Practice/)
-- [SegmentTree](SegmentTree/)
-- [Stack-Queue](Stack-Queue/)
-- [TwoPointer-SlidingWindow](TwoPointer-SlidingWindow/)
-- [UserInputs](UserInputs/)
 
 ### algorithm/
 
@@ -30,12 +16,16 @@ This repository is organized by topic first, then by difficulty or subtopic wher
 - [sorting-searching_assignment-2](algorithm/sorting-searching_assignment-2/)
 - [stack-queue_assignment-1](algorithm/stack-queue_assignment-1/)
 
-### Array/
+### Array
 
 - [Subarray](Array/Subarray/)
-- Problem files in the folder root
+- [Problem files in the folder root](Array/)
 
-### Binary Search/
+### Backtracking
+
+- [Problem files in the folder root](Backtracking/)
+
+### Binary Search
 
 - [Easy](Binary%20Search/Easy/)
 - [Medium](Binary%20Search/Medium/)
@@ -43,14 +33,14 @@ This repository is organized by topic first, then by difficulty or subtopic wher
 - [A1_LowerAndUpperBound.md](Binary%20Search/A1_LowerAndUpperBound.md)
 - [Binary Search Masterclass.md](Binary%20Search/Binary%20Search%20Masterclass.md)
 
-### BinaryTree/
+### BinaryTree
 
 - [Hard](BinaryTree/Hard/)
 - [Medium](BinaryTree/Medium/)
 - [Practice](BinaryTree/Practice/)
 - [Traversals](BinaryTree/Traversals/)
 
-### DP-Bitmasking/
+### DP-Bitmasking
 
 - [1D_DP](DP-Bitmasking/1D_DP/)
 - [2D_DP](DP-Bitmasking/2D_DP/)
@@ -63,52 +53,61 @@ This repository is organized by topic first, then by difficulty or subtopic wher
 - [DP_Subsequence](DP-Bitmasking/DP_Subsequence/)
 - [Dynamic Thinking Masterclass.md](DP-Bitmasking/Dynamic%20Thinking%20Masterclass.md)
 
-### Graph/
+### Graph
 
 - [DFS](Graph/DFS/)
 - [DSU](Graph/DSU/)
 - [MinimumSpanningTree-DisjointSet](Graph/MinimumSpanningTree-DisjointSet/)
 - [ShortestPath](Graph/ShortestPath/)
 - [Topological_Sort](Graph/Topological_Sort/)
-- Reference notes in the folder root
+- [Reference notes in the folder root](Graph/)
 
-### Greedy/
+### Greedy
 
-- Problem files in the folder root
+- [Problem files in the folder root](Greedy/)
 
-### Heaps/
+### HashMaps
 
-- Problem files in the folder root
+- [Easy](HashMaps/Easy/)
+- [Medium](HashMaps/Medium/)
+
+### Heaps
+
+- [Problem files in the folder root](Heaps/)
 - [A1_MinHeap_MaxHeap.md](Heaps/A1_MinHeap_MaxHeap.md)
 
-### LinkedList/
+### LinkedList
 
 - [Easy](LinkedList/Easy/)
 - [Medium](LinkedList/Medium/)
 - [Hard](LinkedList/Hard/)
 - [DLL](LinkedList/DLL/)
 
-### Practice/
+### Practice
 
 - [DP](Practice/DP/)
 - [Graph](Practice/Graph/)
 - [HashMap](Practice/HashMap/)
 
-### SegmentTree/
+### SegmentTree
 
-- Problem files in the folder root
+- [Problem files in the folder root](SegmentTree/)
 - [SegmentTree Thinking Masterclass.md](SegmentTree/SegmentTree%20Thinking%20Masterclass.md)
 
-### Stack-Queue/
+### Stack-Queue
 
 - [stack](Stack-Queue/stack/)
 - [queue](Stack-Queue/queue/)
 
-### TwoPointer-SlidingWindow/
+### String
 
-- Problem files in the folder root
+- [Problem files in the folder root](String/)
 
-### UserInputs/
+### TwoPointer-SlidingWindow
+
+- [Problem files in the folder root](TwoPointer-SlidingWindow/)
+
+### UserInputs
 
 - [Array](UserInputs/Array/)
 - [Strings](UserInputs/Strings/)
@@ -116,5 +115,3 @@ This repository is organized by topic first, then by difficulty or subtopic wher
 ## Notes
 
 - Some folders mix problem files and reference notes in the same directory.
-- Binary Search and LinkedList are now split into difficulty-based subfolders.
-- The DLL folder is kept under LinkedList as a separate doubly linked list section.
