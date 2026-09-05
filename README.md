@@ -3,18 +3,12 @@
 This repository contains data structures and algorithm notes, solutions, and
 practice problems organized by topic and difficulty.
 
-Problems are based on challenges from [LeetCode](https://leetcode.com/) and
-[GeeksforGeeks](https://www.geeksforgeeks.org/).
+Problems are based on challenges from [LeetCode](https://leetcode.com/problemset/) and
+[GeeksforGeeks](https://www.geeksforgeeks.org/explore).
 
 Follow me on [GitHub](https://github.com/JILSPATEL),[Linkdin](https://www.linkedin.com/in/jilspatel29765048/).
 
 ## Repository Hierarchy
-
-### algorithm/
-
-- [Practice Problems-1](algorithm/Practice%20Problems-1/)
-- [sorting-searching_assignment-2](algorithm/sorting-searching_assignment-2/)
-- [stack-queue_assignment-1](algorithm/stack-queue_assignment-1/)
 
 ### Array
 
