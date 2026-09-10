@@ -95,7 +95,9 @@ Follow me on [GitHub](https://github.com/JILSPATEL),[Linkdin](https://www.linked
 
 ### String
 
-- [Problem files in the folder root](String/)
+- [Easy](String/Easy/)
+- [Medium](String/Medium/)
+- [Hard](String/Hard/)
 
 ### TwoPointer-SlidingWindow
 
